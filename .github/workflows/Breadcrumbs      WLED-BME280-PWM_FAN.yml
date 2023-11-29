@@ -1,0 +1,18 @@
+[env:esp32dev]
+board = esp32dev
+platform = ${esp32.platform}
+platform_packages = ${esp32.platform_packages}
+build_unflags = ${common.build_unflags}
+build_flags = 
+  ${common.build_flags_esp32} 
+  -D WLED_RELEASE_NAME=ESP32
+  -D USERMOD_BME280
+  -D USERMOD_PWM_FAN 
+  -D USERMOD_DALLASTEMPERATURE
+lib_deps = 
+  ${esp32.lib_deps}
+  BME280@~3.0.0
+  Wire
+  OneWire@~2.3.7
+monitor_filters = esp32_exception_decoder
+board_build.partitions = ${esp32.default_partitions}
