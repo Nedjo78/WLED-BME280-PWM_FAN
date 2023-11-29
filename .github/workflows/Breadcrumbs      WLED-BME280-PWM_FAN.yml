@@ -1,3 +1,6 @@
+[platformio]
+default_envs = esp32dev
+
 [env:esp32dev]
 board = esp32dev
 platform = ${esp32.platform}
